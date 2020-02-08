@@ -1,0 +1,17 @@
+body{
+
+    text-align: center;
+    margin: auto;
+
+    max-width: 1024px;
+    background-image: url('./img/Bambuk.jpg');
+    background-size: cover;
+
+    color: aliceblue;
+}
+
+.img2{
+
+    border: 5px  rgb(170, 245, 182) solid;
+    border-radius: 30%;
+}
