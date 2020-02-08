@@ -28,7 +28,90 @@ body{
 .name{
 
     margin-top: 10px;
-    
+
     font-size: 25px;
+
+}
+
+.goals{
+
+    margin-top: 100px;
+    
+    
+}
+
+.headline{
+
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.goals_text{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.skills{
+
+    margin-top: 50px;
+    
+    
+}
+
+.skills_headline{
+
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.skills_text{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.EL{
+
+    margin-top: 50px;
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+
+}
+
+.ELL{
+
+    margin-top: 10px;
+    font-size: 23px;
+
+}
+
+.contacts_headline{
+
+    margin-top: 50px;
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.num{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.vk{
+
+    margin-top: 15px;
+    
+    
+}
+
+.Vk_img{
+
+    height: 50px;
+    width: 50px;
 
 }
