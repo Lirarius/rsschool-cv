@@ -1,0 +1,117 @@
+body{
+
+    text-align: center;
+    margin: auto;
+
+    max-width: 1024px;
+    background-image: url('./img/Bambuk.jpg');
+    background-size: cover;
+
+    color: aliceblue;
+}
+
+.column{
+
+   
+
+}
+
+.img{
+
+    margin-top: 30px;
+    
+    border: 5px  rgb(189, 245, 198) solid;
+    border-radius: 50%;
+
+}
+
+.name{
+
+    margin-top: 10px;
+
+    font-size: 25px;
+
+}
+
+.goals{
+
+    margin-top: 100px;
+    
+    
+}
+
+.headline{
+
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.goals_text{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.skills{
+
+    margin-top: 50px;
+    
+    
+}
+
+.skills_headline{
+
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.skills_text{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.EL{
+
+    margin-top: 50px;
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+
+}
+
+.ELL{
+
+    margin-top: 10px;
+    font-size: 23px;
+
+}
+
+.contacts_headline{
+
+    margin-top: 50px;
+    text-decoration: underline aliceblue;
+    font-size: 23px;
+}
+
+.num{
+
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+
+.vk{
+
+    margin-top: 15px;
+    
+    
+}
+
+.Vk_img{
+
+    height: 50px;
+    width: 50px;
+
+}
