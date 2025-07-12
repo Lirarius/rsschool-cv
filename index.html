@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ivan Ivanov CV</title>
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="../rsschool-cv/img/profile-pic.png" alt="Profile photo" width="250" height="250">
+        </div>
+        <div>
+            <div class="header-text">
+                <h1 class="name">Ivan Ivanov</h1>
+                <h3 class="position">Junior frontend developer</h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about-me" title="">About me</a></li>
+                    <li><a href="#education" title="">Education & English level</a></li>
+                    <li><a href="#work-experience" title="">Work experience</a></li>
+                    <li><a href="#skills" title="">Skills</a></li>
+                    <li><a href="#code-example" title="">Code Example</a></li>
+                    <li><a href="#contacts" title="">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div>
+        <section id="about-me">
+            <h2>About me</h2>
+            <p class="p-text">
+                I'm at the beginning of a career change and am currently a junior frontend developer.
+                In parallel with my studies, I work in the NAS of Belarus. 
+                Since the current job requires constant training and the use of various programs, these skills should greatly help in mastering a new profession. 
+                In the future, after mastering front-end development, I would like to move on to full-stack.
+            </p>
+        </section>
+        <section id="education">
+            <h2>Education & English level</h2>
+            <p class="p-text">
+                Bachelor's and Master's degrees in solid state and fluid dynamics at BSU, Faculty of Mechanics and Mathematics.
+                English level - B1, a lot of practice in communication during two years of work in a foreign company.
+            </p>
+        </section>
+        <section id="work-experience">
+            <h2>Work experience</h2>
+            <h4 class="position-h">Engineer</h4>
+            <p>A.V. Luikov Heat and Mass Transfer Institute of the NAS of Belarus</p>
+            <p>2020-2022</p>
+            <p></p>
+            <h4 class="position-h">Junior Researcher</h4>
+            <p>A.V. Luikov Heat and Mass Transfer Institute of the NAS of Belarus</p>
+            <p>2022-to date</p>
+            <p></p>
+            <h4 class="position-h">Thermal engineer</h4>
+            <p>HUAWEI (Bel Huawei Technologies LLC)</p>
+            <p>2022-2024</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Engineering simulation software (OpenFOAM, ANSYS, COMSOL Multiphysics, SolidWorks)</li>
+                <li>System for modern technical computing (Wolfram Mathematica)</li>
+                <li>Basic knowledge of OOP programming languages (С++, Java, Python)</li>
+                <li>Distributed version control system (Git)</li>
+                <li>I am actively studying HTML, CSS, JS</li>
+            </ul>
+        </section>
+        <section id="contacts">
+            <h2>Contacts</h2>
+            <ul>
+                <li>Phone number: +375 (29) 111-22-33</li>
+                <li>Email: Ivanov@proton.me</li>
+                <li>Tg: @Ivan_Ivanov</li>
+            </ul>
+        </section>
+        </div>
+        <div>
+            <section id="code-example">
+                <h2 class="code-example-h">Code Example</h2>
+                <pre>
+                    <code>
+                        #Метод Якоби
+
+                        import numpy as np
+                        import math
+                        from timeit import default_timer as timer
+
+                        def jacobi(A, b, eps):
+                            x = [1] * len(b)
+                            
+                            it = 0
+                            while True:
+                                xn = [0] * len(b)
+                                for i in range(len(x)):
+                                    s1 = 0
+                                    s2 = 0
+                                    
+                                    for j in range(i):
+                                        s1 += A[i][j] * x[j]
+                                    
+                                    for j in range(i + 1, len(b)):
+                                        s2 += A[i][j] * x[j]
+                                    
+                                    xn[i] = (b[i] - s1 - s2) / A[i][i]
+                                
+                                if (math.sqrt(sum([(xn[i] - x[i]) * (xn[i] - x[i]) for i in range(len(b))])) < eps):
+                                    return xn
+                                    
+                                it += 1
+                                if (it > 100):
+                                    return xn
+                                    
+                                x = xn
+
+                        def jacobi_vec(A, b, eps):
+                            x = np.array([1] * len(b))
+                            U = np.triu(A, k = 1)
+                            L = np.tril(A, k = -1)
+                            D = np.diag(A)
+                            D = np.array([1 / d for d in D])
+                            D = np.diagflat(D)
+                            
+                            it = 0
+                            
+                            while True:
+                                xn = np.dot(D, b - np.dot(L + U, x))
+                                if (np.linalg.norm(xn - x) < eps):
+                                    return xn
+                                
+                                it += 1
+                                if (it > 100):
+                                    return xn
+                                    
+                                x = xn
+                                
+                        A = [[1, 0.2, 0.3], [0.3, 1, 0.06], [0.07, 0.08, 1]]
+                        b = [1, 2, 3]
+                        sol = jacobi(A, b, 1e-6)
+                        print("solution", sol)
+                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b), 
+                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) < 1e-6])
+
+                        sol = list(jacobi_vec(np.matrix(A), np.array(b), 1e-6))
+                        print("solution", sol)
+                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b), 
+                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) < 1e-6])
+
+                        start = timer()
+                        for i in range(10000):
+                            sol = jacobi(A, b, 1e-6)
+                        end = timer()
+
+                        loops = end - start
+
+                        start = timer()
+                        AA = np.matrix(A)
+                        bb = np.array(b)
+                        for i in range(10000):
+                            sol = jacobi_vec(AA, bb, 1e-6)
+                        end = timer()
+
+                        vectorization = end - start
+
+                        print("time of loops", loops)
+                        print("time of vectorization", vectorization)
+                    </code>
+                </pre>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-images">
+            <a href="https://github.com/Lirarius" title="link on Ivanov's Github">
+                <img src="../rsschool-cv/img/Github-logo.png" alt="Ivanov's Github" width="100" height="100">
+            </a>
+            <a href="https://rs.school/courses/javascript-preschool-ru" title="link on RSS courses">
+                <img src="../rsschool-cv/img/RSS-logo.png" alt="RSS-logo" height="100">
+            </a>
+        </div>
+        <div class="year">
+            <h3>2025</h3>
+        </div>
+        
+    </footer>
+</body>
+</html>
