@@ -1,1 +1,48 @@
-base
+    header{
+        margin: auto;
+        max-width: 1600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body{
+        margin: auto;
+        max-width: 1600px;
+        display: block;
+        background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+    }
+    main{
+        display: flex;
+        justify-content: space-around;
+    }
+    .position-h{
+        text-decoration: underline;
+    }
+    .code-example-h{
+        text-align: center;
+    }
+    .p-text{
+        max-width: 600px;
+    }
+    .name{
+        text-align: left;
+    }
+    .position{
+        text-align: left;
+    }
+    .header-text{
+        padding-left: 25px;
+    }
+    .profile-pic{
+        display: block;
+        text-align: center;
+    }
+    .footer-images{
+        width: 1600px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-grow: 1;
+    }
+    .year{
+        text-align: center;
+    }
