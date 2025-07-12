@@ -1,9 +1,54 @@
-<style>
-    head{
+    header{
+        margin: auto;
+        max-width: 1600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: rgb(71, 167, 84);*/
+    }
+    body{
+        margin: auto;
+        max-width: 1600px;
+        display: block;
+        background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+    }
+    footer{
+         /*background-color: rgb(50, 101, 160);*/
+    }
+    main{
+        display: flex;
+        justify-content: space-around;
+    }
+    .position-h{
+        text-decoration: underline;
+    }
+    .code-example-h{
         text-align: center;
+    }
+    .p-text{
+        max-width: 600px;
     }
 
-    body{
+    .name{
+        text-align: left;
+    }
+    .position{
+        text-align: left;
+    }
+    .header-text{
+        padding-left: 25px;
+    }
+    .profile-pic{
+        display: block;
         text-align: center;
     }
-</style>
+    
+    .footer-images{
+        width: 1600px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-grow: 1;
+    }
+    .year{
+        text-align: center;
+    }
