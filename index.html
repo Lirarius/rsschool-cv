@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li><a href="#about-me" title="">About me</a></li>
-                    <li><a href="#education" title="">Education & English level</a></li>
+                    <li><a href="#education" title="">Education &amp; English level</a></li>
                     <li><a href="#work-experience" title="">Work experience</a></li>
                     <li><a href="#skills" title="">Skills</a></li>
                     <li><a href="#code-example" title="">Code Example</a></li>
@@ -35,12 +35,12 @@
             <p class="p-text">
                 I'm at the beginning of a career change and am currently a junior frontend developer.
                 In parallel with my studies, I work in the NAS of Belarus. 
-                Since the current job requires constant training and the use of various programs, these skills should greatly help in mastering a new profession. 
+                Since the current job requires constant training and the use of various programs, these skills should greatly help in mastering a new profession.
                 In the future, after mastering front-end development, I would like to move on to full-stack.
             </p>
         </section>
         <section id="education">
-            <h2>Education & English level</h2>
+            <h2>Education &amp; English level</h2>
             <p class="p-text">
                 Bachelor's and Master's degrees in solid state and fluid dynamics at BSU, Faculty of Mechanics and Mathematics.
                 English level - B1, a lot of practice in communication during two years of work in a foreign company.
@@ -108,11 +108,11 @@
                                     
                                     xn[i] = (b[i] - s1 - s2) / A[i][i]
                                 
-                                if (math.sqrt(sum([(xn[i] - x[i]) * (xn[i] - x[i]) for i in range(len(b))])) < eps):
+                                if (math.sqrt(sum([(xn[i] - x[i]) * (xn[i] - x[i]) for i in range(len(b))])) &lt; eps):
                                     return xn
                                     
                                 it += 1
-                                if (it > 100):
+                                if (it &gt; 100):
                                     return xn
                                     
                                 x = xn
@@ -129,11 +129,11 @@
                             
                             while True:
                                 xn = np.dot(D, b - np.dot(L + U, x))
-                                if (np.linalg.norm(xn - x) < eps):
+                                if (np.linalg.norm(xn - x) &lt; eps):
                                     return xn
                                 
                                 it += 1
-                                if (it > 100):
+                                if (it &gt; 100):
                                     return xn
                                     
                                 x = xn
@@ -143,12 +143,12 @@
                         sol = jacobi(A, b, 1e-6)
                         print("solution", sol)
                         print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b), 
-                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) < 1e-6])
+                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) &lt; 1e-6])
 
                         sol = list(jacobi_vec(np.matrix(A), np.array(b), 1e-6))
                         print("solution", sol)
-                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b), 
-                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) < 1e-6])
+                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b),
+                        ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) &lt; 1e-6])
 
                         start = timer()
                         for i in range(10000):
