@@ -34,7 +34,7 @@
             <h2>About me</h2>
             <p class="p-text">
                 I'm at the beginning of a career change and am currently a junior frontend developer.
-                In parallel with my studies, I work in the NAS of Belarus. 
+                In parallel with my studies, I work in the NAS of Belarus.
                 Since the current job requires constant training and the use of various programs, these skills should greatly help in mastering a new profession.
                 In the future, after mastering front-end development, I would like to move on to full-stack.
             </p>
@@ -92,29 +92,29 @@
 
                         def jacobi(A, b, eps):
                             x = [1] * len(b)
-                            
+
                             it = 0
                             while True:
                                 xn = [0] * len(b)
                                 for i in range(len(x)):
                                     s1 = 0
                                     s2 = 0
-                                    
+
                                     for j in range(i):
                                         s1 += A[i][j] * x[j]
-                                    
+
                                     for j in range(i + 1, len(b)):
                                         s2 += A[i][j] * x[j]
-                                    
+
                                     xn[i] = (b[i] - s1 - s2) / A[i][i]
-                                
+
                                 if (math.sqrt(sum([(xn[i] - x[i]) * (xn[i] - x[i]) for i in range(len(b))])) &lt; eps):
                                     return xn
-                                    
+
                                 it += 1
                                 if (it &gt; 100):
                                     return xn
-                                    
+
                                 x = xn
 
                         def jacobi_vec(A, b, eps):
@@ -124,25 +124,25 @@
                             D = np.diag(A)
                             D = np.array([1 / d for d in D])
                             D = np.diagflat(D)
-                            
+
                             it = 0
-                            
+
                             while True:
                                 xn = np.dot(D, b - np.dot(L + U, x))
                                 if (np.linalg.norm(xn - x) &lt; eps):
                                     return xn
-                                
+
                                 it += 1
                                 if (it &gt; 100):
                                     return xn
-                                    
+
                                 x = xn
-                                
+
                         A = [[1, 0.2, 0.3], [0.3, 1, 0.06], [0.07, 0.08, 1]]
                         b = [1, 2, 3]
                         sol = jacobi(A, b, 1e-6)
                         print("solution", sol)
-                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b), 
+                        print(np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b),
                         ("bad!", "ok!")[np.linalg.norm(np.dot(np.matrix(A), np.array(sol)) - b) &lt; 1e-6])
 
                         sol = list(jacobi_vec(np.matrix(A), np.array(b), 1e-6))
@@ -185,7 +185,6 @@
         <div class="year">
             <h3>2025</h3>
         </div>
-        
     </footer>
 </body>
 </html>
